@@ -1,6 +1,7 @@
 import { userConstants } from "../_constants/userConstants";
 import { userServices } from "../_services/userServices";
 
+// exports functions/ actions related to users
 export const userActions = { changeUser };
 
 function changeUser(id) {
@@ -10,7 +11,7 @@ function changeUser(id) {
         dispatch(success(userData));
       },
       (error) => {
-        console.log("change User failed: ", error);
+        console.log("Change User failed: ", error);
       }
     );
   };
