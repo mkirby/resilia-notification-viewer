@@ -9,6 +9,13 @@ function renderNotifications(userNotifications) {
       </div>
     );
   }
+  if (!userNotifications) {
+    return (
+      <div>
+        <h4>Please Select A User</h4>
+      </div>
+    );
+  }
   return userNotifications.map((n) => (
     <>
       <div>
@@ -21,7 +28,13 @@ function renderNotifications(userNotifications) {
 }
 
 function NotificationLog(props) {
-  return <div>{renderNotifications(props.currentUser.notifications)}</div>;
+  return (
+    <div>
+      {Object.keys(props.currentUser).length !== 0
+        ? renderNotifications(props.currentUser.notifications)
+        : renderNotifications(false)}
+    </div>
+  );
 }
 
 function mapStateToProps(state) {
