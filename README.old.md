@@ -1,1 +1,0 @@
-# resilia-notification-viewer
