@@ -6,7 +6,6 @@ class UserSelector extends React.Component {
   state = {
     user: this.props.currentUser ? this.props.currentUser : {},
     users: [],
-    selectedDropdownOption: {},
   };
 
   componentDidMount() {
@@ -44,7 +43,6 @@ class UserSelector extends React.Component {
   };
 
   render() {
-    console.log("current user: ", this.state.user);
     return (
       <select value={this.state.user.id} onChange={this.handleUserChange}>
         {this.renderUserOptions(this.state.users)}
